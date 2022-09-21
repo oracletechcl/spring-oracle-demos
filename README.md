@@ -83,6 +83,13 @@ Run the `DemoApplication` class from your IDE or invoke `/.mvnw spring-boot:run`
 
 To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `pom.xml` file
 
+Upon execution, you should see something like this: 
+
+```shell
+
+
+```
+
 ### spring-mongo-demo
 
 Showcases the Oracle Mongo API via Spring-Data
