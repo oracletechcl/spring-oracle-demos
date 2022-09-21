@@ -26,6 +26,13 @@ For `<database_name>` enter the TLS authentication details on ADB similar to thi
 ```shell
 (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=jv3bojlg.adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=ga4f753fbeae7f7_adbscljson_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
 ```
+A copy of the wallet should be placed in a directory named `wallet`, adjacent to the `pom.xml` file.
+
+Run the `DemoApplication` class from your IDE or invoke `/.mvnw spring-boot:run` on the command line.
+
+To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `pom.xml` file
+
+
 
 Upon execution, this is what you should see: 
 
@@ -56,12 +63,6 @@ null
 2022-09-21 18:52:12.654  INFO 107616 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-09-21 18:52:12.827  INFO 107616 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 ```
-
-A copy of the wallet should be placed in a directory named `wallet`, adjacent to the `pom.xml` file.
-
-Run the `DemoApplication` class from your IDE or invoke `/.mvnw spring-boot:run` on the command line.
-
-To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `pom.xml` file
 
 ### spring-soda-demo
 
