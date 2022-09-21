@@ -86,7 +86,31 @@ To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `po
 Upon execution, you should see something like this: 
 
 ```shell
+$  cd /home/opc/CODE ; /usr/bin/env /usr/lib/jvm/java-11-openjdk-11.0.16.1.1-1.0.1.el9_0.x86_64/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:33093 @/tmp/cp_969ynwbbfmb5eepugpafrurca.argfile com.example.demo.DemoApplication 
 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.1)
+
+2022-09-21 18:59:25.758  INFO 108187 --- [           main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.16.1 on demospringboot with PID 108187 (/home/opc/CODE/spring-oracle-demos/spring-soda-demo/target/classes started by opc in /home/opc/CODE)
+2022-09-21 18:59:25.767  INFO 108187 --- [           main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2022-09-21 18:59:27.040  INFO 108187 --- [           main] com.example.demo.DemoApplication         : Started DemoApplication in 1.837 seconds (JVM running for 2.431)
+2022-09-21 18:59:27.044  INFO 108187 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-21 18:59:28.300  INFO 108187 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+################
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.16.0.1.0 jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=jv3bojlg.adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=ga4f753fbeae7f7_adbscljson_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+################
+Inserted: {"name":"Code","soda":true}
+Inserted: {"name":"Slides","status":"WORK_IN_PROGRESS"}
+Key:     9BC778E4C7F7439AB427930AE0AB02AB
+Content: {"name":"Code","soda":true}
+2022-09-21 18:59:29.462  INFO 108187 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-21 18:59:29.593  INFO 108187 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 
 ```
 
