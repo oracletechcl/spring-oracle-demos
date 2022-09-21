@@ -21,9 +21,47 @@ spring.datasource.username=<username>
 spring.datasource.password=<password>
 ```
 
+For `<database_name>` enter the TLS authentication details on ADB similar to this: 
+
+```shell
+(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=jv3bojlg.adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=ga4f753fbeae7f7_adbscljson_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+```
+
+Upon execution, this is what you should see: 
+
+```shell
+[opc@demospringboot CODE]$  cd /home/opc/CODE ; /usr/bin/env /usr/lib/jvm/java-11-openjdk-11.0.16.1.1-1.0.1.el9_0.x86_64/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:40083 @/tmp/cp_2x5sz0figlubw2peum8msufpk.argfile com.example.demo.DemoApplication 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.1)
+
+2022-09-21 18:52:08.750  INFO 107616 --- [           main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.16.1 on demospringboot with PID 107616 (/home/opc/CODE/spring-oracle-demos/spring-jdbc-demo/target/classes started by opc in /home/opc/CODE)
+2022-09-21 18:52:08.759  INFO 107616 --- [           main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2022-09-21 18:52:10.492  INFO 107616 --- [           main] com.example.demo.DemoApplication         : Started DemoApplication in 2.303 seconds (JVM running for 2.908)
+2022-09-21 18:52:10.496  INFO 107616 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-21 18:52:11.789  INFO 107616 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+################
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.16.0.1.0 jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=jv3bojlg.adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=ga4f753fbeae7f7_adbscljson_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+################
+Todo[id=1, name='Code', data='{"spring": true}']
+Todo[id=2, name='Slides', data='{"status": "WORK_IN_PROGRESS"}']
+true
+null
+2022-09-21 18:52:12.654  INFO 107616 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-21 18:52:12.827  INFO 107616 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+```
+
 A copy of the wallet should be placed in a directory named `wallet`, adjacent to the `pom.xml` file.
 
 Run the `DemoApplication` class from your IDE or invoke `/.mvnw spring-boot:run` on the command line.
+
+To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `pom.xml` file
 
 ### spring-soda-demo
 
@@ -42,6 +80,8 @@ A copy of the wallet should be placed in a directory named `wallet`, adjacent to
 
 Run the `DemoApplication` class from your IDE or invoke `/.mvnw spring-boot:run` on the command line.
 
+To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `pom.xml` file
+
 ### spring-mongo-demo
 
 Showcases the Oracle Mongo API via Spring-Data
@@ -58,3 +98,5 @@ spring.data.mongodb.uri=mongodb://<username>:password>@<database>.<oci_region>.o
 A copy of the wallet should be placed in a directory named `wallet`, adjacent to the `pom.xml` file.
 
 Run the `DemoApplication` class from your IDE or invoke `/.mvnw spring-boot:run` on the command line.
+
+To install `mvnw` run `mvn wrapper:wrapper` in the directory adjacent to the `pom.xml` file
